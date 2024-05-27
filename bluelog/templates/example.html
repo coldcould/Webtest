@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <title>Bootstrap页面</title>
+</head>
+<body>
+<!--        <div class="container">容器</div>-->
+<!--        <div class="row">行</div>-->
+<!--        <div class="col-md-8">栅格系统</div>-->
+<!--        <div class="col-md-push-3">列排序：左右浮动</div>-->
+<!--        <div class="col-md-offset-2">列偏移</div>-->
+
+<!--bootstrap 对 h1-h6标题效果进行覆盖-->
+<!--副标题 small标签 或 small 类-->
+<!--段落 <p class="leader"><small><b><i><em><strong></strong></em></i></b></small></p>-->
+
+强调
+    <div class="text-muted">浅灰</div>
+    <div class="text-primary">蓝色</div>
+    <div class="text-success">浅绿色</div>
+    <div class="text-info">浅蓝色</div>
+    <div class="text-warning">黄色</div>
+    <div class="text-danger">褐色</div>
+
+对齐效果
+    <p>没bootstrap</p>
+    <p style="text-align: right;">我丢你个老母</p>
+    <p>有bootstrap</p>
+    <p class="text-left">左对齐</p>
+    <p class="text-right">右对齐</p>
+    <p class="text-center">居中对齐</p>
+    <p class="text-justify">
+        段落末尾一样平段落末尾一样平
+        段落末尾一样平段落末尾一样平段落末尾一样平段落末尾一样平段落末尾一样平
+        段落末尾一样平段落末尾一样平段落末尾一样平段落末尾一样平段落末尾一样平段落末尾一样平
+        段落末尾一样平段落末尾一样平段落末尾一样平段落末尾一样平段落末尾一样平段落末尾一样平段落末尾一样平段落末尾一样平
+        段落末尾一样平段落末尾一样平段落末尾一样平段落末尾一样平段落末尾一样平段落末尾一样平段落末尾一样平段落末尾一样平段落末尾一样平
+        段落末尾一样平段落末尾一样平段落末尾一样平段落末尾一样平段落末尾一样平段落末尾一样平段落末尾一样平段落末尾一样平段落末尾一样平段落末尾一样平
+    </p>
+<br>
+列表
+<ul>
+    <li>无序列表1</li>
+    <li>无序列表1</li>
+    <li>无序列表1</li>
+    <li>无序列表1</li>
+</ul>
+
+<ol>
+    <li>有序列表</li>
+    <li>有序列表</li>
+    <li>有序列表</li>
+</ol>
+
+<dl>
+    <dt>html</dt>
+    <dd>超文本标记语言</dd>
+    <dt>css</dt>
+    <dd>层叠样式表是一种样式表语言</dd>
+</dl>
+
+<ul class="list-unstyled">
+    <li>去点列表1</li>
+    <li>无序列表1</li>
+    <li>无序列表1</li>
+    <li>无序列表1</li>
+</ul>
+
+<ul class="list-inline">
+    <li>水平列表</li>
+    <li>有序列表</li>
+    <li>有序列表</li>
+</ul>
+
+<dl class="dl-horizontal">
+    <dt>自定义列表 内联列表</dt>
+    <dd>超文本标记语言</dd>
+    <dt>css</dt>
+    <dd>层叠样式表是一种样式表语言</dd>
+</dl>
+<br>
+代码
+this is a simple code <br>
+单行代码
+<code>this is a simple code</code>
+<p>使用<kbd>ctrl</kbd> + <kbd>s</kbd></p>
+多行代码
+<pre>
+public class HelloWorld{
+    public static void main(String[] args){
+        System.out.println("helloworld...");
+    }
+}
+</pre>
+显示html代码需要使用字符实体
+<pre>
+    &lt;h2&gt;hao&lt;h2&gt;
+</pre>
+滚动条
+<pre class="pre-scrollable">
+    <ol>
+        <li>99999999999999999999</li>
+        <li>99999999999999999999</li>
+        <li>99999999999999999999</li>
+        <li>99999999999999999999</li>
+        <li>99999999999999999999</li>
+        <li>99999999999999999999</li>
+        <li>99999999999999999999</li>
+        <li>99999999999999999999</li>
+        <li>99999999999999999999</li>
+        <li>99999999999999999999</li>
+
+    </ol>
+</pre>
+<br>
+
+表格
+.table .table-bordered .table-striped .table-hover .table-condensed
+<table class="table table-bordered table-striped table-hover table-condensed">
+    <tr class="success" ">
+        <th>javase</th>
+        <th>javase</th>
+        <th>javase</th>
+    </tr>
+    <tr class="success">
+        <th>springboot</th>
+        <th>springboot</th>
+        <th>springboot</th>
+    </tr>
+    <tr class="active">
+        <th>javase</th>
+        <th>javase</th>
+        <th>javase</th>
+    </tr>
+    <tr class="warning">
+        <th>springboot</th>
+        <th>springboot</th>
+        <th>springboot</th>
+    </tr>
+</table>
+<br>
+
+表单
+.form-control
+<input type="text"><br>
+<select name="" id="">
+    <option value="">请选择城市</option>
+    <option value="">上海</option>
+    <option value="">北京</option>
+</select><br>
+<textarea name="" id="" cols="30" rows="10"></textarea><br>
+
+1.文本框
+.form-control .input-lg .input-sm
+
+<div class="row">
+    <div class="col-md-3">
+        <input type="text" class="form-control"><br>
+        <input type="text" class="form-control input-group-lg"><br>
+        <input type="text" class="form-control input-group-sm"><br>
+    </div>
+</div>
+
+2.下拉框
+.form-control multiple="multiple"
+<div class="row">
+    <div class="col-md-3">
+        <select class="form-control">
+            <option>请选择城市</option>
+            <option>上海</option>
+            <option>北京</option>
+        </select><br>
+        <select class="form-control">
+            <option>请选择城市</option>
+            <option>上海</option>
+            <option>北京</option>
+        </select><br>
+        <select class="form-control" multiple="multiple">
+            <option>请选择城市</option>
+            <option>上海</option>
+            <option>北京</option>
+        </select><br>
+    </div>
+</div>
+
+3.文本域
+<div class="row">
+    <div class="col-md-3">
+        <textarea class="form-control"></textarea>
+    </div>
+</div>
+<br>
+
+复选框|单选框
+<input type="checkbox" name="hobby">唱歌
+<input type="checkbox" name="hobby">跳舞<br>
+<input type="radio" name="sex">男
+<input type="radio" name="sex">女
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="checkbox">
+            <label><input type="checkbox" name="hobby">唱歌</label>
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox" name="hobby">跳舞</label>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <label class="checkbox-inline">
+            <input type="checkbox" name="hobby">唱歌
+        </label>
+        <label class="checkbox-inline">
+            <input type="checkbox" name="hobby">跳舞
+        </label>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="radio">
+            <label><input type="radio" name="hobby">唱歌</label>
+        </div>
+        <div class="checkbox">
+            <label><input type="radio" name="hobby">跳舞</label>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <label class="radio-inline">
+            <input type="radio" name="hobby">唱歌
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="hobby">跳舞
+        </label>
+    </div>
+</div>
+
+按钮
+.btn
+btn-primary btn-info btn-success btn-warning btn-danger btn-link
+<button>按钮</button><input type="button" value="按钮">
+
+<button class="btn">按钮</button>
+<button class="btn btn-danger">按钮</button>
+<button class="btn btn-success">按钮</button>
+<button class="btn btn-warning">按钮</button>
+<button class="btn btn-primary">按钮</button>
+<button class="btn btn-info">按钮</button>
+<button class="btn btn-default">按钮</button>
+<button class="btn btn-link">按钮</button>
+<br>
+
+<!--通过按钮样式设置其他元素为按钮效果-->
+<a href="#" class="btn btn-success">a标签</a>
+<span class="btn btn-danger">span标签</span>
+<div class="btn btn-info">div标签</div>
+<br>
+
+<!--设置按钮的大小-->
+<button class="btn btn-danger">按钮</button>
+<button class="btn btn-success btn-lg">按钮</button>
+<button class="btn btn-success btn-sm">按钮</button>
+<button class="btn btn-success btn-xs">按钮</button>
+<br>
+
+按钮禁用
+<button class="btn btn-info" onclick="alert('Hello');" disabled="disabled">按钮</button>
+<button class="btn btn-info disabled" onclick="alert('Hello');" >按钮</button>
+
+
+<h1>表单布局</h1>
+水平表单
+<form action="#" class="form-horizontal" role="form">
+    <h2 align="center">用户信息表</h2>
+    <div class="form-group">
+        <label for="uname" class="col-md-2 control-label label-info">姓名</label>
+        <div class="col-md-8">
+            <input type="text" id="uname" class="form-control" placeholder="请输入姓名">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="upassword" class="col-md-2" style="white-space:nowrap;">密码</label>
+        <div class="col-md-6">
+            <input type="text" id="upassword" class="form-control" placeholder="请输入密码">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="upassword" class="col-md-2" style="white-space:nowrap;">爱好</label>
+        <div class="col-md-8">
+            <label class="checkbox-inline">
+                <input type="checkbox" name="hobby">唱歌
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" name="hobby">跳舞
+            </label>
+        </div>
+    </div>
+    <div class="from-group">
+        <div class="col-md-8">
+            <select name="" id="" class="form-control">
+                <option value="">请选择城市</option>
+                <option value="">上海</option>
+                <option value="">北京</option>
+            </select>
+        </div>
+    </div>
+    <div class="from-group">
+        <label for="remark" class="form-control col-md-2">简介</label>
+        <div class="col-md-8">
+            <textarea name="" id="remark" cols="30" rows="10" class="form-control">简介</textarea>
+        </div>
+    </div>
+    <div class="from-group">
+        <div class="col-md-8 col-md-push-8">
+            <button class="btn btn-primary">提交</button>
+        </div>
+    </div>
+
+
+</form>
+
+<hr>
+
+内联表单
+<form class="form-inline">
+    <div class="from-group">
+        <label for="username">姓名</label>
+        <input type="text" id="username" class="form-control" placeholder="请输入姓名">
+    </div>
+    <div class="from-group">
+        <label for="pw">密码</label>
+        <input type="text" id="pw" class="form-control" placeholder="请输入密码">
+    </div>
+    <div class="from-group">
+        <button class="btn btn-default">提交</button>
+    </div>
+</form>
+
+<hr>
+<h1>缩略图</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="thumbnail">
+                <img src="{{ url_for('static', filename='picture.jpg')}}" style="width:240px;height:360px;">
+                <h3>挺进地牢</h3>
+                <p>好玩的欸</p>
+                <button class="btn btn-default">
+                    <span class="glyphicon glyphicon-heart"></span>喜欢
+                </button>
+                <button class="btn btn-info">
+                    <span class="glyphicon glyphicon-heart"></span>评论
+                </button>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="thumbnail">
+                <img src="{{ url_for('static', filename='picture.jpg')}}" style="width:240px;height:360px;">
+                <h3>挺进地牢</h3>
+                <p>好玩的欸</p>
+                <button class="btn btn-default">
+                    <span class="glyphicon glyphicon-heart"></span>喜欢
+                </button>
+                <button class="btn btn-info">
+                    <span class="glyphicon glyphicon-heart"></span>评论
+                </button>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="thumbnail">
+                <img src="{{ url_for('static', filename='picture.jpg')}}" style="width:240px;height:360px;">
+                <h3>挺进地牢</h3>
+                <p>好玩的欸</p>
+                <button class="btn btn-default">
+                    <span class="glyphicon glyphicon-heart"></span>喜欢
+                </button>
+                <button class="btn btn-info">
+                    <span class="glyphicon glyphicon-heart"></span>评论
+                </button>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="thumbnail">
+                <img src="{{ url_for('static', filename='picture.jpg')}}" style="width:240px;height:360px;">
+                <h3>挺进地牢</h3>
+                <p>好玩的欸</p>
+                <button class="btn btn-default">
+                    <span class="glyphicon glyphicon-heart"></span>喜欢
+                </button>
+                <button class="btn btn-info">
+                    <span class="glyphicon glyphicon-heart"></span>评论
+                </button>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="thumbnail">
+                <img src="{{ url_for('static', filename='picture.jpg')}}" style="width:240px;height:360px;">
+                <h3>挺进地牢</h3>
+                <p>好玩的欸</p>
+                <button class="btn btn-default">
+                    <span class="glyphicon glyphicon-heart"></span>喜欢
+                </button>
+                <button class="btn btn-info">
+                    <span class="glyphicon glyphicon-heart"></span>评论
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<h1>面板</h1>
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        明星合集
+    </div>
+    <div class="panel-body">
+        。。。。
+    </div>
+</div>
+
+
+<h1>导航和分页导航</h1>
+<h3>标签式导航</h3>
+<ul class="nav nav-tabs">
+    <li class="active"><a href="#">Home</a></li>
+    <li class="active"><a href="#">Home</a></li>
+    <li class="active"><a href="#">Home</a></li>
+    <li class="active"><a href="#">Home</a></li>
+    <li class="active"><a href="#">Home</a></li>
+    <li class="active"><a href="#">Home</a></li>
+    <li class="active"><a href="#">Home</a></li>
+    <li class="active"><a href="#">Home</a></li>
+</ul>
+<h3>胶囊式导航菜单</h3>
+<ul class="nav nav-pills">
+    <li class="active"><a href="#">Home</a></li>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Home</a></li><li><a href="#">Home</a></li>
+    <li><a href="#">Home</a></li><li><a href="#">Home</a></li>
+    <li><a href="#">Home</a></li>
+</ul>
+
+<!--    <div class="container" style="background-color: thistle;height: 500px">-->
+<!--       1 .container 类用于固定宽度并支持响应式布局的容器-->
+<!--    </div>-->
+<!--    <div class="container-fluid" style="background-color: blue; height: 500px">-->
+<!--       2 .container-fluid类用于100%宽度， 占据全部视口宽度-->
+<!--    </div>-->
+
+<!--    列组合-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-8" style="background:red">8</div>-->
+<!--            <div class="col-md-4" style="background:blueviolet">4</div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--        col-md-offset-2 列偏移 bootstrap3貌似没-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-1" style="background:seagreen">6</div>-->
+<!--                <div class="col-md-1 col-md-offset-2" style="background:blueviolet">6</div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-1 " style="background:cadetblue">1</div>-->
+<!--                <div class="col-md-1 col-md-push-3" style="background:thistle">1</div>-->
+<!--                <div class="col-md-1 " style="background:cadetblue">1</div>-->
+<!--                <div class="col-md-1 col-md-push-3" style="background:thistle">1</div>-->
+<!--                <div class="col-md-1 " style="background:cadetblue">1</div>-->
+<!--                <div class="col-md-1 col-md-push-3" style="background:thistle">1</div>-->
+<!--            </div>-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-6 " style="background-color:cadetblue">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-md-3" style="background-color:darkcyan">3</div>-->
+<!--                        <div class="col-md-2" style="background-color:blue">2</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-md-6 col-md-push-3" style="background-color:thistle">6</div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+    <h1>标题1 <small>副标题</small></h1>
+    <h2>标题2 <span class="small">副标题2</span></h2>
+    <h3>标题3</h3>
+    <div class="h1">标题1</div>
+
+<hr>
+    <p>我丢</p>
+    <p class="lead">我丢</p>
+    <p class="lead">我丢<small>对付我</small>累个<b>打发士大夫</b>老母道<strong>FUKCXKC</strong>路宽<i>ff</i><em>fff</em>度离开的</p>
+    <p>我丢</p>
+<div class="row">
+        <div class="col-md-8" style="background-color:blue;">ada</div>
+        <div class="col-md-2" style="background-color:black;">sd</div>
+        <div class="col-md-2" style="background-color:blanchedalmond;">sds</div>
+    </div>
+<hr>
+
+
+<script src="{{ url_for('static', filename='js/jquery-3.2.1.slim.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+</body>
+</html>

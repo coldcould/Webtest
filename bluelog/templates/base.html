@@ -1,0 +1,124 @@
+{% from 'bootstrap/nav.html' import render_nav_item %}
+{% from 'bootstrap/pagination.html' import render_pagination %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% block head %}
+    <title>{%block title%}{%endblock%} -个人博客</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css">
+        <!-- CSS -->
+{#<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">#}
+    {% endblock %}
+</head>
+<body>
+    {% block nav %}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a href="/" class="navbar-brand">Bluelog</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarColor01"
+                        aria-controls="navbarColor01" aria-expanded="false" aria-
+                            label="Toggle navigation">
+                    <span class="collapse navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="#navbarColor01">
+                    <ul class="navbar-nav mr-auto">
+{#                        <li class="nav-item">#}
+{#                            <a href="/" class="nav-link">Home</a>#}
+{#                        </li>#}
+{#                        <li class="nav-item">#}
+{#                            <a href="/" class="nav-link">About</a>#}
+{#                        </li>#}
+                        {{ render_nav_item('blog.index','Home') }}
+                        {{ render_nav_item('blog.about','About') }}
+                    </ul>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                            role="button"
+                           aria-haspopup="true"
+                           aria-expanded="false">
+                           New <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a  class="dropdown-item" href="{{ url_for('admin.new_post')}}">Post</a>
+                            <a  class="dropdown-item" href="{{ url_for('admin.new_category')}}">Category</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                            role="button"
+                           aria-haspopup="true"
+                           aria-expanded="false">
+                           Manage <span class="caret"></span>
+                            {% if unread_comments %}
+                            	<span class="badge badge-success">new</span>
+                            {% endif %}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a href="{{ url_for('admin.manage_post') }}" class="dropdown-item">Post</a>
+                            <a href="{{ url_for('admin.manage_category') }}" class="dropdown-item">Category</a>
+                            <a href="{{ url_for('admin.manage_comment') }}" class="dropdown-item">
+                                Comment
+                                {% if unread_comments %}
+                                	<span class="badge badge-success">{{ unread_comments }}</span>
+                                {% endif %}
+                            </a>
+                        </div>
+                    </li>
+                    {{ render_nav_item('admin.settings','Settings') }}
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    {% endblock %}
+
+    <main class="container">
+        {% for message in get_flashed_messages(with_categories=True) %}
+        	<div class="alert alert-{{ message[0] }}" role="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ message[1] }}
+            </div>
+        {% endfor %}
+
+        {% block content %}
+
+        {% endblock %}
+        {% block footer %}
+            <footer>
+                <small>
+                    {% if current_user.is_authenticated %}
+{#                    如果用户已经登录，显示下面的"登出"链接#}
+                    <a href="{{ url_for('auth.logout', next=request.full_path) }}">Logout</a>
+                    {% else %}
+                    <a href="{{ url_for('auth.login', next=request.full_path) }}">Login</a>
+                    {% endif %}
+                </small>
+            </footer>
+        {% endblock %}
+        ...
+    </main>
+
+{% block scripts %}
+    <script type="text/javascript" src="{{ url_for('static',filename='js/jquery-3.2.1.slim.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/popper.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+    {{ moment.include_moment(local_js=url_for('static', filename='js/moment-with-locales.min.js')) }}
+
+{#    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>#}
+{% endblock %}
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple/"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+flask-bootstrap = "*"
+flask-sqlalchemy = "*"
+flask-moment = "*"
+faker = "*"
+python-dotenv = "*"
+bootstrap-flask = "*"
+flask-wtf = "*"
+flask-ckeditor = "*"
+jinja2 = "*"
+gunicorn = "*"
+psycopg2 = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
